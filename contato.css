@@ -283,18 +283,19 @@ button:hover {
 }
 
 #mensagem-sucesso {
-    margin-top: 20px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border: 4px solid #e8177a;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #333;
-    text-align: center;
-}
+            margin-top: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-left: 4px solid #e8177a;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            display: none;
+        }
 
 @media (max-width: 600px) {
     .navbar ul {
