@@ -7,17 +7,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <link href="contato.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        #mensagem-sucesso {
+            margin-top: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-left: 4px solid #e8177a;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
+        <div id="nav_logo">
+            <img src="yab_logo_branco.png" alt="logo Yab Moda Plus Size" width="50" height="50">
+        </div>
         <ul>
             <li><a href="home.html">Inicial</a></li>
             <li><a href="produtos.html">Produtos</a></li>
             <li><a href="sobre.html">Sobre-Nós</a></li>
             <li><a href="contato.html">Contato</a></li>
-            <div class="indicador"></div>
         </ul>
+        <div class="nav_spacer"></div>
     </nav>
+
     <div class="container">
         <div class="heading">
             <h2>Contato</h2>
@@ -31,6 +51,11 @@
             <textarea name="mensagem" rows="4" required></textarea>
             <button type="submit">Enviar</button>
         </form>
+
+        <!-- ✅ DENTRO do .container, logo após o form -->
+        <div id="mensagem-sucesso">
+            ✅ Mensagem enviada com sucesso!
+        </div>
     </div>
 
     <main></main>
@@ -38,13 +63,9 @@
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
-
-                <!-- ESQUERDA: Logo -->
                 <div id="footer_logo">
                     <img src="yab_logo_rosa.png.png" alt="Logo YAB Moda Plus Size" width="130" height="130">
                 </div>
-
-                <!-- CENTRO: Links + Redes sociais -->
                 <div id="footer_center">
                     <ul class="footer-list">
                         <li><a href="home.html">Inicial</a></li>
@@ -52,37 +73,36 @@
                         <li><a href="sobre.html">Sobre-Nós</a></li>
                         <li><a href="contato.html">Contato</a></li>
                     </ul>
-
                     <div id="footer_social_midia">
-                        <a href="#" class="footer-link" id="instagram" aria-label="Instagram">
+                        <a href="https://www.instagram.com/yabcurves/" class="footer-link" id="instagram" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
-                        <a href="#" class="footer-link" id="facebook" aria-label="Facebook">
+                        <a href="https://www.facebook.com/share/1EVE8YNnXW/" class="footer-link" id="facebook" aria-label="Facebook">
                             <i class="fa-brands fa-facebook"></i>
                         </a>
-                        <a href="#" class="footer-link" id="whatsapp" aria-label="WhatsApp">
+                        <a href="https://api.whatsapp.com/send?phone=5535991159481" class="footer-link" id="whatsapp" aria-label="WhatsApp">
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
-
             </div>
-
             <div id="footer_copyright">
                 &copy; 2026 &mdash; Todos os direitos reservados
             </div>
         </div>
     </footer>
 
-</body>
-</html>
-
-  
-
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Mensagem enviada com sucesso! (Simulação)');
-            this.reset();
+
+            var msg = document.getElementById('mensagem-sucesso');
+            msg.style.display = 'block';
+
+            setTimeout(function() {
+                msg.style.display = 'none';
+            }, 3000);
         });
-   
+    </script>
+</body>
+</html>
