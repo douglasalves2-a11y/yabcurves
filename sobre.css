@@ -10,209 +10,102 @@
 body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
+    padding: 20px 0;
 }
 
 .navbar {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto 40px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255,255,255,0.9);
     border-radius: 50px;
     padding: 10px 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
+    gap: 30px;
     position: relative;
-    flex-wrap: wrap;
 }
 
 .navbar li a {
     text-decoration: none;
-    color: #333;
+    color: #000;
     font-weight: 500;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 25px;
-    transition: background 0.3s ease, color 0.3s ease;
-    display: block;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .navbar li a:hover {
-    background: #E8177A;
-    color: #fff;
-}
-#nav_logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    background: #EB4084;
+    color: #000;
 }
 
 .navbar a[href="sobre.html"] {
-    color: #E8177A;
-    font-weight: 700;
+    color: #000;
+    font-weight: bold;
+    
 }
-
 .indicador {
     position: absolute;
-    bottom: -6px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     width: 40px;
     height: 3px;
     border-radius: 2px;
+    transition: left 0.3s ease;
 }
 
-
-main {
-    flex: 1;
-    min-height: 80vh;
+.sobre h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
 }
 
-
-footer {
-    width: 100%;
-    margin-top: auto;
+.sobre {
+    test-align: center;
 }
 
-#footer_content {
-    background-color: #ed357f;
-    display: flex;
-    flex-direction: column;
+.sobre {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-#footer_contacts {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    align-items: center;
-    padding: 2rem 3rem;
-    width: 100%;
+.sobre h2 {
+  text-align: center;
 }
 
-
-#footer_logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+.sobre p {
+  text-align: justify;
 }
 
-
-#footer_center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.25rem;
+.descricao h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
 }
 
-.footer-list {
-    display: flex;
-    gap: 0.75rem;
-    list-style: none;
-    flex-wrap: wrap;
-    justify-content: center;
+.descricao {
+    test-align: center;
 }
 
-.footer-list a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 0.95rem;
-    padding: 4px 8px;
-    border-radius: 4px;
-    transition: opacity 0.2s ease;
+.descricao {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.footer-list a:hover {
-    opacity: 0.7;
+.descricao h2 {
+  text-align: center;
 }
 
-
-#footer_social_midia {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.25rem;
+.descricao p {
+  text-align: justify;
 }
 
-#footer_social_midia .footer-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.5rem;
-    width: 2.5rem;
-    color: #fff;
-    border-radius: 50%;
-    text-decoration: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-#footer_social_midia .footer-link i {
-    font-size: 1.25rem;
-}
-
-#footer_social_midia .footer-link:hover {
-    opacity: 0.85;
-    transform: scale(1.1);
-}
-
-#instagram {
-    background: linear-gradient(135deg, #7f37c9, #ff2992, #ff9807);
-}
-
-#facebook {
-    background-color: #4267b3;
-}
-
-#whatsapp {
-    background-color: #25d366;
-}
-
-
-#footer_copyright {
-    color: #fff;
-    display: flex;
-    background-color: #C72F6E;
-    justify-content: center;
-    font-size: 0.9rem;
-    padding: 1.25rem 1.5rem;
-    font-weight: 400;
-    width: 100%;
-    gap: 0.25rem;
-}
-
-@media screen and (max-width: 768px) {
-    .navbar {
-        max-width: 95%;
-        padding: 8px 12px;
-    }
-
-    .navbar li a {
-        padding: 8px 14px;
-        font-size: 0.9rem;
-    }
-
-    #footer_contacts {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 1.5rem;
-        padding: 1.5rem 2rem;
-    }
-}
-
-@media screen and (max-width: 426px) {
-    .navbar li a {
-        padding: 7px 10px;
-        font-size: 0.85rem;
-    }
-
-    .footer-list {
-        flex-direction: column;
-        align-items: center;
-    }
-}
