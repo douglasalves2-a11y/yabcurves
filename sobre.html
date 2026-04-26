@@ -3,75 +3,456 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="sobre.css" rel="stylesheet" type="text/css" />
+    <title>Sobre Nós - YAB Moda Plus Size</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Lora', serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+           
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            max-width: 1400px;
+            margin: 0 auto 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #nav_logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background 0.3s ease, color 0.3s ease;
+            display: block;
+        }
+
+        .navbar li a:hover {
+            background: #E8177A;
+            color: #fff;
+        }
+
+        /* Destaca o link ativo da página atual */
+        .navbar a[href="sobre.html"] {
+            color: #E8177A;
+            font-weight: 700;
+        }
+
+        .indicador {
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            border-radius: 2px;
+        }
+
+        /* ── MAIN / CONTEÚDO ── */
+        main {
+            flex: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 2rem 4rem;
+        }
+
+        /* Hero com imagem da modelo */
+        .hero {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero .card {
+            width: 320px;
+            height: 420px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(232, 23, 122, 0.25);
+            border: 4px solid #fff;
+        }
+
+        .hero .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        /* Seção texto sobre */
+        .sobre {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .sobre h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #C72F6E;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .sobre p {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.85;
+            margin-bottom: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Galeria de fotos */
+        .galeria {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .galeria .foto {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+            border: 3px solid #fff;
+        }
+
+        .galeria .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .galeria .foto:hover img {
+            transform: scale(1.04);
+        }
+
+        .galeria .foto.grande {
+            width: 420px;
+            height: 320px;
+        }
+
+        .galeria .foto.pequena {
+            width: 240px;
+            height: 320px;
+        }
+
+        /* Descrição final */
+        .descricao {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 18px;
+            padding: 2.5rem 2.5rem;
+            box-shadow: 0 4px 20px rgba(232, 23, 122, 0.1);
+            border-left: 5px solid #E8177A;
+        }
+
+        .descricao p {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .descricao p:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: #C72F6E;
+            font-style: italic;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            width: 100%;
+            margin-top: auto;
+        }
+
+        #footer_content {
+            background-color: #ed357f;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #footer_contacts {
+            display: grid;
+            grid-template-columns: 160px 1fr;
+            align-items: center;
+            padding: 2rem 3rem;
+            width: 100%;
+        }
+
+        #footer_logo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        #footer_center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.25rem;
+        }
+
+        .footer-list {
+            display: flex;
+            gap: 0.75rem;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-list a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.95rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-list a:hover {
+            opacity: 0.7;
+        }
+
+        #footer_social_midia {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        #footer_social_midia .footer-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.5rem;
+            width: 2.5rem;
+            color: #fff;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        #footer_social_midia .footer-link i {
+            font-size: 1.25rem;
+        }
+
+        #footer_social_midia .footer-link:hover {
+            opacity: 0.85;
+            transform: scale(1.1);
+        }
+
+        #instagram {
+            background: linear-gradient(135deg, #7f37c9, #ff2992, #ff9807);
+        }
+
+        #facebook {
+            background-color: #4267b3;
+        }
+
+        #whatsapp {
+            background-color: #25d366;
+        }
+
+        #footer_copyright {
+            color: #fff;
+            display: flex;
+            background-color: #C72F6E;
+            justify-content: center;
+            font-size: 0.9rem;
+            padding: 1.25rem 1.5rem;
+            font-weight: 400;
+            width: 100%;
+            gap: 0.25rem;
+        }
+
+        /* ── RESPONSIVO ── */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                max-width: 95%;
+                padding: 8px 12px;
+            }
+
+            .navbar li a {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+
+            #footer_contacts {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                gap: 1.5rem;
+                padding: 1.5rem 2rem;
+            }
+
+            .hero .card {
+                width: 260px;
+                height: 340px;
+            }
+
+            .galeria .foto.grande {
+                width: 100%;
+                height: 240px;
+            }
+
+            .galeria .foto.pequena {
+                width: 100%;
+                height: 200px;
+            }
+
+            .descricao {
+                padding: 1.75rem 1.5rem;
+            }
+        }
+
+        @media screen and (max-width: 426px) {
+            .navbar li a {
+                padding: 7px 10px;
+                font-size: 0.85rem;
+            }
+
+            .footer-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sobre h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <nav class="navbar">
+        <div id="nav_logo">
+            <img src="yab_logo_branco.png" alt="logo Yab Moda Plus Size" width="50" height="50">
+        </div>
+
         <ul>
             <li><a href="home.html">Inicial</a></li>
             <li><a href="produtos.html">Produtos</a></li>
-            <li><a href="sobre.html">Sobre-Nos</a></li>
+            <li><a href="sobre.html">Sobre-Nós</a></li>
             <li><a href="contato.html">Contato</a></li>
             <div class="indicador"></div>
         </ul>
+        <div class="indicador"></div>
+        <div class="nav_spacer"></div>
+    </nav>
 
-       <section class="hero">
-    <div class="card">
-      <img src="C:\Users\Douglas H. Alves\Downloads\yabcurves-main\img\JaquelineYAB.jpeg" alt="Modelo">
-    </div>
-  </section>
+    <main>
 
-  <!-- SOBRE -->
-  <section class="sobre">
-    <h2>Sobre Yab curves moda plus size</h2>
+        <!-- HERO: foto da modelo -->
+        <section class="hero">
+            <div class="card">
+                <img src="img/JaquelineYAB.jpeg" alt="Modelo">
+            </div>
+        </section>
 
-    <p>
-      A Yab Curves nasceu em 05 de dezembro de 2019, idealizada a partir do propósito
-      de oferecer ao público feminino curvy e plus size uma moda que traduzisse elegância,
-      sofisticação e excelência em cada detalhe.
-    </p>
+        <!-- SOBRE -->
+        <section class="sobre">
+            <h2>Sobre Yab Curves Moda Plus Size</h2>
 
-    <p>
-      Fundada por Jaqueline M. S. Alves, graduada em Design de Moda pela FACED/UNA,
-      em Divinópolis – MG, a marca surgiu da união entre conhecimento técnico,
-      sensibilidade estética e a busca por peças que valorizassem a beleza feminina
-      com autenticidade e requinte.
-    </p>
-  </section>
+            <p>
+                A Yab Curves nasceu em 05 de dezembro de 2019, idealizada a partir do propósito
+                de oferecer ao público feminino curvy e plus size uma moda que traduzisse elegância,
+                sofisticação e excelência em cada detalhe.
+            </p>
 
-  <!-- IMAGENS SOBREPOSTAS -->
-  <section class="galeria">
-    <div class="foto grande">
-      <img src="img/foto1.jpg" alt="">
-    </div>
-    <div class="foto pequena">
-      <img src="img/foto2.jpg" alt="">
-    </div>
-  </section>
+            <p>
+                Fundada por Jaqueline M. S. Alves, graduada em Design de Moda pela FACED/UNA,
+                em Divinópolis – MG, a marca surgiu da união entre conhecimento técnico,
+                sensibilidade estética e a busca por peças que valorizassem a beleza feminina
+                com autenticidade e requinte.
+            </p>
+        </section>
 
-  <!-- TEXTO FINAL -->
-  <section class="descricao">
-    <p>
-      A Yab Curves vai além do vestir: representa uma proposta de moda pensada
-      para mulheres que desejam expressar personalidade, confiança e estilo,
-      por meio de coleções cuidadosamente selecionadas para realçar a elegância
-      em todas as silhuetas.
-    </p>
+        <!-- GALERIA -->
+        <section class="galeria">
+            <div class="foto grande">
+                <img src="img/foto1.jpg" alt="Foto da coleção YAB Curves">
+            </div>
+            <div class="foto pequena">
+                <img src="img/foto2.jpg" alt="Foto da coleção YAB Curves">
+            </div>
+        </section>
 
-    <p>
-      Cada detalhe do seu estilo é uma forma silenciosa de revelar sua força e sua beleza.
-    </p>
+        <!-- DESCRIÇÃO FINAL -->
+        <section class="descricao">
+            <p>
+                A Yab Curves vai além do vestir: representa uma proposta de moda pensada
+                para mulheres que desejam expressar personalidade, confiança e estilo,
+                por meio de coleções cuidadosamente selecionadas para realçar a elegância
+                em todas as silhuetas.
+            </p>
 
-       
-    </body>
-<br>
-<br>
-<br>
-<br>
-<br>
-         <a href="https://www.instagram.com/yabcurves/" class="footer-link" id="instagram" aria-label="Instagram">
+            <p>
+                Cada detalhe do seu estilo é uma forma silenciosa de revelar sua força e sua beleza.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+
+                <div id="footer_logo">
+                    <img src="yab_logo_rosa.png.png" alt="Logo YAB Moda Plus Size" width="130" height="130">
+                </div>
+
+                <div id="footer_center">
+                    <ul class="footer-list">
+                        <li><a href="home.html">Inicial</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre-Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+
+                    <div id="footer_social_midia">
+                        <a href="https://www.instagram.com/yabcurves/" class="footer-link" id="instagram" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                         <a href="https://www.facebook.com/share/1EVE8YNnXW/" class="footer-link" id="facebook" aria-label="Facebook">
